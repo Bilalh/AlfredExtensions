@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.bilalh.extension</string>
+	<key>connections</key>
+	<dict>
+		<key>678886BD-7321-4458-9EBE-D4735E811731</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7287A3A8-37EE-4F77-8919-21109D012968</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E9FE4FB0-3AC1-497F-A7F3-6BFF274CE2A7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2AEB5B97-9E1D-4145-B40E-C33C150B7F67</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Bilal Syed Hussain</string>
+	<key>description</key>
+	<string>Toggles visibility of a file(s) extension</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Toogle Extension Visibilty</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "Finder"
+	set _files to selection as alias list
+	repeat with f in _files
+		set extension hidden of f to true
+	end repeat
+	set selection to _files
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2AEB5B97-9E1D-4145-B40E-C33C150B7F67</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Hide Extension</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>E9FE4FB0-3AC1-497F-A7F3-6BFF274CE2A7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Toogle Extension Visibility</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>678886BD-7321-4458-9EBE-D4735E811731</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "Finder"
+	set _files to selection as alias list
+	repeat with f in _files
+		set extension hidden of f to (not extension hidden of f)
+	end repeat
+	set selection to _files
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7287A3A8-37EE-4F77-8919-21109D012968</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Based off
+https://github.com/wafflesnatcha/AppleScripts/blob/master/Applications/Finder/Toggle%20Hide%20extension.applescript
+
+Uses Rodger(manyk.deviantart.com)'s icon</string>
+	<key>uidata</key>
+	<dict>
+		<key>2AEB5B97-9E1D-4145-B40E-C33C150B7F67</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>678886BD-7321-4458-9EBE-D4735E811731</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7287A3A8-37EE-4F77-8919-21109D012968</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E9FE4FB0-3AC1-497F-A7F3-6BFF274CE2A7</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://bilalh.github.com</string>
+</dict>
+</plist>
